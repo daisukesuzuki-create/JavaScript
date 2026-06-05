@@ -9,7 +9,7 @@ let value;  //4
 
 const empty = null;   //5
 
-const lname = ["田中", "佐藤", "久保田", "鈴木", "河本",];  //6
+const lname = ["田中", "佐藤", "久保田", "鈴木", "河本"];  //6
 
 const user = {
   id: 1,
@@ -75,10 +75,10 @@ window.addEventListener("scroll", () => {
 
 // 3. クリックで子要素追加
 const addBtn = document.getElementById("addBtn");
-const container = document.getElementById("container");
+const container2 = document.getElementById("container");
 
 addBtn.addEventListener("click", () => {
   const newP = document.createElement("p");
   newP.textContent = "子要素が追加されました！";
-  container.appendChild(newP);
+  container2.appendChild(newP);
 });
