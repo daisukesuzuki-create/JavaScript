@@ -82,11 +82,11 @@ button.addEventListener("click", () => {
     if (score === 100) {
         alert("満点！！");
     } else if (score >= 80) {
-        alert(score + "点で" + "合格です");
+        alert(score + "点で合格です");
     } else if (score >= 30) {
-        alert(score + "点で" + "赤点です");
+        alert(score + "点で赤点です");
     } else {
-        alert(score + "点で" + "不合格です");
+        alert(score + "点で不合格です");
     }
 });
 
@@ -117,7 +117,8 @@ console.log("11.ランダムな値");
 const getRandomNumber = () => {
     return Math.floor(Math.random() * 100 + 1);
 }
-console.log(getRandomNumber());
+const RandomNumber = getRandomNumber();
+console.log(RandomNumber);
 
 //12.最も高い数値
 console.log("12.最も高い数値");
@@ -147,8 +148,8 @@ for (let i = 0; i < fluits.length; i++) {
 //16.配列の合計
 console.log("16.配列の合計");
 const array = [1, 2, 3];
-const arraySum = 0;
-for (let i = 0; i < arraySum.length; i++) {
+let arraySum = 0;
+for (let i = 0; i < array.length; i++) {
     arraySum += array[i];
 }
 console.log(arraySum);
@@ -158,11 +159,11 @@ console.log("17.配列の分割");
 const A17 = [1, "hoge", 2, "huga", 3, "piyo"];
 const strings = [];
 const numbers = [];
-for (let i = 0; i < A.length; i++) {
-    if (typeof (A17[i]) === "strings") {
-        strings.push(strings[i]);
-    } else if (typeof (A17[i] === "number")) {
-        numbers.push(numbers[i]);
+for (let i = 0; i < A17.length; i++) {
+    if (typeof (A17[i]) === "string") {
+        strings.push(A17[i]);
+    } else if (typeof (A17[i]) === "number") {
+        numbers.push(A17[i]);
     }
 }
 console.log(strings);
