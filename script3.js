@@ -12,10 +12,20 @@ const json = JSON.stringify(user);
 console.log(json);
 
 //フォームバリデーションの実装
+//同工程が多いためバリデーション関数作る
+function varidation(inputId, errorId, regax, errorMessage) {
+    const valueVar = document.getElementById(inputId).value;
+    const errorVar = document.getElementById(errorId);
+    errorVar.textContent = "";
+    if (valueVar === "" || !regax.test(valueVar)) {
+        errorVar.textContent = errorMessage;
+    }
+};
+
 //名前
 console.log("・名前")
-const nameCheck = document.getElementById("submitBtn"); 
-nameCheck.addEventListener("click", () => {
+const nameCheck = document.getElementById("submitBtn");
+/*nameCheck.addEventListener("click", () => {
     const name = document.getElementById("nameInput").value;
     const nameError = document.getElementById("nameError");
     nameError.textContent = "";
@@ -23,6 +33,9 @@ nameCheck.addEventListener("click", () => {
     if (name === "" || !nameRegax.test(name)) {
         document.getElementById("nameError").innerText = "正しい名前を入力してください";
     }
+});*/
+nameCheck.addEventListener("click", () => {
+    varidation("nameInput", "nameError", /[^ -~｡-ﾟ]/, "正しい名前を入力してください");
 });
 
 // 年齢
@@ -45,7 +58,7 @@ ageCheck.addEventListener("click", () => {
 //メールアドレス
 console.log("・メールアドレス");
 const emailCheck = document.getElementById("submitBtn");
-emailCheck.addEventListener("click", () => {
+/*emailCheck.addEventListener("click", () => {
     const email = document.getElementById("emailInput").value;
     const emailError = document.getElementById("emailError");
     emailError.textContent = "";
@@ -53,17 +66,23 @@ emailCheck.addEventListener("click", () => {
     if (email === "" || !emailRegax.test(email)) {
         emailError.textContent = "正しいメールアドレスを入力してください";
     }
-})
+})*/
+emailCheck.addEventListener("click", () => {
+    varidation("emailInput", "emailError", /^[\w.\-]+@[\w\-]+\.[\w.\-]+$/, "正しいメールアドレスを入力してください");
+});
 
 //電話番号
 console.log("電話番号");
 const phoneCheck = document.getElementById("submitBtn");
-phoneCheck.addEventListener("click", () => {
-    const phone = document.getElementById("phoneInput");
+/*phoneCheck.addEventListener("click", () => {
+    const phone = document.getElementById("phoneInput").value;
     const phoneError = document.getElementById("phoneError")
     phoneError.textContent = "";
     const phoneRegax = /^\d{11}$/;
     if (phone === "" || !phoneRegax.test(phone)) {
         phoneError.textContent = "正しい電話番号を入力してください";
     }
-})
+})*/
+phoneCheck.addEventListener("click", () => {
+    varidation("phoneInput", "phoneError", /^\d{11}$/, "正しい電話番号を入力してください");
+});
