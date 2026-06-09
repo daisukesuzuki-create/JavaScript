@@ -25,7 +25,7 @@ nameCheck.addEventListener("click", () => {
     }
 });
 
-//年齢
+// 年齢
 console.log("・年齢");
 const ageCheck = document.getElementById("submitBtn");
 ageCheck.addEventListener("click", () => {
