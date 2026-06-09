@@ -1,6 +1,6 @@
 //1.JSON文字列をJavaScriptオブジェクトに変換しましょう
 console.log("1.JSON文字列をJavaScriptオブジェクトに変換");
-const jsonString = '{"name":"Taro", "age":42, "gender": "male"}';
+const jsonString = '{name:"Taro", age:42, gender: "male"}';
 const obj = JSON.parse(jsonString);
 console.log(obj.name);
 console.log(obj.age);
